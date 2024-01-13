@@ -1,0 +1,44 @@
+//$sidebar-width:280px;
+$gutter2:calc(var(--bs-gutter-x)*2);
+
+
+
+.chart-height{
+    height: calc(100vw - $gutter2);
+    transition: height 0.2s;
+}
+
+.bar-height{
+  height: calc((100vw - $gutter2)/2);
+  transition: height 0.2s;
+}
+
+
+.sidebar_toggled{
+  .chart-height{
+    height: calc(100vw - $sidebar-width - $gutter2);
+  }
+  .bar-height{
+    height: calc((100vw - $sidebar-width - $gutter2)/2);
+  }
+  
+}
+
+.t-green{
+    color: #07f177;
+}
+
+@include media-breakpoint-up(lg) {
+    .chart-height{
+        height: calc((100vw - $sidebar-width - $gutter2)/3);
+        transition: height 0.2s;
+    }
+
+    .sidebar_toggled{
+        .chart-height{
+          height: calc((100vw - $gutter2)/3);
+        }
+    }
+}
+
+
