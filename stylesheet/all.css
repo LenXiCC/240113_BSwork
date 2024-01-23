@@ -12040,6 +12040,10 @@ textarea.form-control-lg {
     margin-left: 0;
   }
 }
+.top80 {
+  top: 80px;
+}
+
 .chart-height {
   height: calc(100vw - var(--bs-gutter-x) * 2);
   transition: height 0.2s;

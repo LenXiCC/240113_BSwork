@@ -80,7 +80,7 @@
     <main class="main">
       <!-- main頂部 -->
       <div class="bg-white w-100 border-bottom sticky-top">
-        <a href="#" class="d-inline-block py-3 px-4 border-end text-primary" id="toggle_barside_btn"><i
+        <a href="#" class="d-inline-block py-3 px-4 border-end text-primary" id="toggle_barside_btn" aria-label="側邊縮放按鈕"><i
             class="bi bi-arrows-angle-expand"></i></a>
       </div>
       <!-- main內文 -->
@@ -88,7 +88,7 @@
         <div class="row">
           <!-- 選單 -->
           <div class="col-12 col-xl-3 mb-3" >
-            <div class="list-group sticky-top" style="top: 80px;" id="listlist">
+            <div class="list-group sticky-top top80" id="listlist">
               <a href="#list-item-1" class="list-group-item list-group-item-action">摘要</a>
               <a href="#list-item-2" class="list-group-item list-group-item-action">購買品項</a>
               <a href="#list-item-3" class="list-group-item list-group-item-action">發票管理</a>
@@ -136,7 +136,7 @@
                     <tbody class="table-group-divider">
                       <tr>
                         <td class="ps-4">
-                          <input type="checkbox" class="form-check-input">
+                          <input type="checkbox" class="form-check-input" aria-label="表單勾選">
                         </td>
                         <td>P1234567</td>
                         <td>六角西餐：大麥克全家餐</td>
@@ -158,7 +158,7 @@
                       </tr>
                       <tr>
                         <td class="ps-4">
-                          <input type="checkbox" class="form-check-input">
+                          <input type="checkbox" class="form-check-input" aria-label="表單勾選">
                         </td>
                         <td>P1234568</td>
                         <td>義大利麵佐番茄醬</td>
@@ -180,7 +180,7 @@
                       </tr>
                       <tr>
                         <td class="ps-4">
-                          <input type="checkbox" class="form-check-input">
+                          <input type="checkbox" class="form-check-input" aria-label="表單勾選">
                         </td>
                         <td>P1234569</td>
                         <td>麵</td>
@@ -220,17 +220,6 @@
                         </div>
                       </div>
                     </div>
-                    <script>
-                      const cancelModal = document.getElementById("cancelorderModal");
-                      cancelModal.addEventListener("show.bs.modal", function (e) {
-                        // console.log(e)
-                        // const button = e.relatedTarget;
-                        const button = e.relatedTarget;
-                        const orderID = button.getAttribute('data-bs-order-ID');
-                        const modalText = cancelModal.querySelector("#cancelText");
-                        modalText.textContent = orderID;
-                      })
-                    </script>
                   </table>
                   <div class="p-3">
                     <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button"
@@ -288,19 +277,19 @@
               <div class="card-body">
                 <div class="row g-3 align-items-center">
                   <div class="col-2">
-                    <button class="btn btn-outline-secondary w-100">退款</button>
+                    <button type="button" class="btn btn-outline-secondary w-100">退款</button>
                   </div>
                   <div class="col-10">
                     退還用戶款項
                   </div>
                   <div class="col-2">
-                    <button class="btn btn-outline-secondary w-100">折讓</button>
+                    <button type="button" class="btn btn-outline-secondary w-100">折讓</button>
                   </div>
                   <div class="col-10">
                     針對已開立的訂單退回部分款項
                   </div>
                   <div class="col-2">
-                    <button class="btn btn-outline-danger w-100">刪除訂單</button>
+                    <button type="button" class="btn btn-outline-danger w-100">刪除訂單</button>
                   </div>
                   <div class="col-10">
                     將訂單刪除，並移除相關訂單資訊
@@ -316,6 +305,17 @@
       </div>
     </main>
   </div>
+  <script>
+    const cancelModal = document.getElementById("cancelorderModal");
+    cancelModal.addEventListener("show.bs.modal", function (e) {
+      // console.log(e)
+      // const button = e.relatedTarget;
+      const button = e.relatedTarget;
+      const orderID = button.getAttribute('data-bs-order-ID');
+      const modalText = cancelModal.querySelector("#cancelText");
+      modalText.textContent = orderID;
+    })
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
     crossorigin="anonymous"></script>

@@ -2,6 +2,10 @@
 $gutter2:calc(var(--bs-gutter-x)*2);
 
 
+.top80{
+  top: 80px;
+}
+
 
 .chart-height{
     height: calc(100vw - $gutter2);
